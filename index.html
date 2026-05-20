@@ -50,7 +50,67 @@ border-radius:999px;
 text-decoration:none;
 color:#5f5147;
 }
+.content-section{
+  background:#f6f1ea;
+  padding:80px 10%;
+  text-align:center;
+  color:#6e6256;
+}
 
+.content-section h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.intro{
+  font-size:18px;
+  margin-bottom:50px;
+  color:#8b7d71;
+}
+
+.card-container{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  width:300px;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card h3{
+  margin-top:20px;
+  font-size:28px;
+}
+
+.card p{
+  padding:15px 25px 30px;
+  line-height:1.8;
+  font-size:16px;
+}
+
+.quote-box{
+  margin-top:70px;
+  font-size:28px;
+  font-style:italic;
+  color:#8b7d71;
+}
 </style>
 </head>
 
@@ -74,6 +134,46 @@ masuk pelan-pelan →
 </div>
 
 </section>
+<section class="content-section">
 
+  <h2>Terima kasih sudah hadir di sini 🌿</h2>
+
+  <p class="intro">
+    Ruang kecil untuk hati yang sedang belajar bernapas lebih pelan.
+  </p>
+
+  <div class="card-container">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" />
+      <h3>Belajar Jujur</h3>
+      <p>
+        Tentang lelah yang selama ini tidak pernah benar-benar diucapkan.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" />
+      <h3>Hari yang Berat</h3>
+      <p>
+        Tidak semua hari harus dilalui dengan kuat.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?q=80&w=1200&auto=format&fit=crop" />
+      <h3>Tentang Rumah</h3>
+      <p>
+        Kadang rumah adalah rasa aman yang belum pernah kita punya.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="quote-box">
+    “Kita semua sedang bertumbuh dengan cara yang berbeda.”
+  </div>
+
+</section>
 </body>
 </html>
