@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ruang Tenang</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f6f1e9;
+color:#5f5147;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(255,255,255,0.65);
+padding:60px;
+border-radius:30px;
+backdrop-filter:blur(4px);
+}
+
+h1{
+font-size:64px;
+margin-bottom:10px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+}
+
+.button{
+display:inline-block;
+margin-top:20px;
+padding:12px 24px;
+background:#d8cfc2;
+border-radius:999px;
+text-decoration:none;
+color:#5f5147;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>🌿 Ruang Tenang</h1>
+
+<p>
+Tempat pulang untuk hati yang lelah,<br>
+dan ruang kecil untuk belajar bertumbuh pelan-pelan.
+</p>
+
+<a href="#" class="button">
+masuk pelan-pelan →
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>
