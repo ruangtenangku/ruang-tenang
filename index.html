@@ -10,6 +10,7 @@
 
 body{
 margin:0;
+padding-top:90px;
 font-family:Georgia, serif;
 background:#f6f1e9;
 color:#5f5147;
@@ -111,11 +112,65 @@ color:#5f5147;
   font-style:italic;
   color:#8b7d71;
 }
+  .navbar{
+    width:100%;
+    padding:20px 60px;
+    box-sizing:border-box;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    background:rgba(248,243,235,0.85);
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#7a6557;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#7a6557;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#b89b84;
+}
 </style>
 </head>
 
 <body>
+<nav class="navbar">
 
+  <div class="logo">
+    🌿 Ruang Tenang
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Beranda</a>
+    <a href="#">Tulisan</a>
+    <a href="#">Catatan Hati</a>
+    <a href="#">Lirik</a>
+    <a href="#">Tentang Saya</a>
+  </div>
+
+</nav>
 <section class="hero">
 
 <div class="overlay">
