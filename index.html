@@ -143,6 +143,8 @@ color:#5f5147;
 }
 
 .nav-links a{
+position:relative;
+padding-bottom:5px;
     text-decoration:none;
     color:#7a6557;
     font-size:18px;
@@ -151,6 +153,22 @@ color:#5f5147;
 
 .nav-links a:hover{
     color:#b89b84;
+}
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:0%;
+    height:2px;
+
+    background:#c9a98f;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
 }
 </style>
 </head>
