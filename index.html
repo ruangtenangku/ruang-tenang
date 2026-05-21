@@ -173,6 +173,57 @@ padding-bottom:5px;
     width:100%;
 }
 </style>
+  .footer{
+    background:#efe7dc;
+    text-align:center;
+    padding:60px 20px;
+    margin-top:80px;
+    color:#7a6557;
+}
+
+.footer p{
+    margin:10px 0;
+}
+
+.footer-links{
+    margin:25px 0;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#8b7968;
+    transition:0.3s;
+    position:relative;
+}
+
+.footer-links a:hover{
+    color:#b89b84;
+}
+
+.footer-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0%;
+    height:1px;
+    background:#b89b84;
+    transition:0.3s;
+}
+
+.footer-links a:hover::after{
+    width:100%;
+}
+
+.copyright{
+    margin-top:30px;
+    font-size:14px;
+    opacity:0.8;
+}
 </head>
 
 <body>
@@ -250,5 +301,22 @@ dan ruang kecil untuk belajar bertumbuh pelan-pelan.
   </div>
 
 </section>
+  <footer class="footer">
+
+<p>
+“pelan-pelan juga tetap sebuah langkah.”
+</p>
+
+<div class="footer-links">
+<a href="#">instagram</a>
+<a href="#">catatan</a>
+<a href="#">teman tumbuh</a>
+</div>
+
+<p class="copyright">
+© 2026 Ruang Tenang — dibuat dengan hati 🌿
+</p>
+
+</footer>
 </body>
 </html>
