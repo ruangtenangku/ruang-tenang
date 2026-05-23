@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tulisan — Ruang Tenang</title>
+
+<style>
+
+body{
+margin:0;
+background:#f6f1ea;
+font-family:Georgia, serif;
+color:#5f5147;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:#f2ece3;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#7b675b;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#7b675b;
+font-size:17px;
+}
+
+.container{
+padding:80px 10%;
+text-align:center;
+}
+
+.container h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.container p{
+font-size:20px;
+color:#8a7667;
+margin-bottom:60px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:35px;
+flex-wrap:wrap;
+}
+
+.card{
+width:280px;
+background:white;
+border-radius:28px;
+overflow:hidden;
+text-decoration:none;
+color:#5f5147;
+box-shadow:0 2px 6px rgba(0,0,0,0.03);
+transition:0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:30px 25px;
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:17px;
+line-height:1.8;
+margin:0;
+}
+
+.footer{
+margin-top:100px;
+padding:50px 20px;
+text-align:center;
+color:#9b8778;
+font-size:18px;
+}
+
+@media (max-width:768px){
+
+.navbar{
+padding:15px 20px;
+flex-direction:column;
+gap:15px;
+}
+
+.container h1{
+font-size:38px;
+}
+
+.container p{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+🌿 Ruang Tenang
+</div>
+
+<div class="nav-links">
+<a href="index.html">Beranda</a>
+<a href="tulisan.html">Tulisan</a>
+<a href="#">Catatan Hati</a>
+<a href="#">Lirik</a>
+</div>
+
+</nav>
+
+<section class="container">
+
+<h1>Tulisan Pelan-Pelan 🌙</h1>
+
+<p>
+Kumpulan tulisan kecil untuk hati yang sedang belajar bernapas lebih tenang.
+</p>
+
+<div class="cards">
+
+<a href="belajar-jujur.html" class="card">
+
+<img src="Serene-Morning.png">
+
+<div class="card-content">
+
+<h3>Belajar Jujur</h3>
+
+<p>
+Tentang lelah yang selama ini tidak pernah benar-benar diucapkan.
+</p>
+
+</div>
+</a>
+
+<a href="hari-yang-berat.html" class="card">
+
+<img src="Pelan-pelan-melalui-jalan-taman.png">
+
+<div class="card-content">
+
+<h3>Hari yang Berat</h3>
+
+<p>
+Tidak semua hari harus dilalui dengan kuat.
+</p>
+
+</div>
+</a>
+
+<a href="tentang-rumah.html" class="card">
+
+<img src="Cozy-garden-retreat-in-golden-light.png">
+
+<div class="card-content">
+
+<h3>Tentang Rumah</h3>
+
+<p>
+Kadang rumah adalah rasa aman yang belum pernah kita punya.
+</p>
+
+</div>
+</a>
+
+</div>
+
+</section>
+
+<footer class="footer">
+“pelan-pelan juga tetap sebuah langkah.” 🌿
+</footer>
+
+</body>
+</html>
