@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tentang Saya — Ruang Tenang</title>
+
+<style>
+
+body{
+margin:0;
+background:#f6f1ea;
+font-family:Georgia, serif;
+color:#5f5147;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:#f2ece3;
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(8px);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#7b675b;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#7b675b;
+font-size:17px;
+transition:0.3s ease;
+padding-bottom:4px;
+}
+
+.nav-links a:hover{
+color:#5f5147;
+}
+
+.active{
+border-bottom:2px solid #8d7868;
+color:#5f5147 !important;
+}
+
+/* HERO */
+
+.hero{
+padding:90px 10% 60px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:70px;
+flex-wrap:wrap;
+}
+
+.hero-image{
+flex:1;
+min-width:320px;
+max-width:470px;
+animation:fadeUp 1s ease;
+}
+
+.hero-image img{
+width:100%;
+border-radius:32px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero-text{
+flex:1;
+min-width:320px;
+max-width:650px;
+animation:fadeUp 1.2s ease;
+}
+
+.hero-text h1{
+font-size:64px;
+margin-bottom:10px;
+line-height:1.1;
+color:#5f5147;
+}
+
+.subtitle{
+font-size:20px;
+color:#9c8877;
+margin-bottom:45px;
+line-height:1.8;
+}
+
+.hero-text p{
+font-size:22px;
+line-height:2.1;
+margin-bottom:28px;
+color:#66584f;
+}
+
+.quote-box{
+margin-top:50px;
+padding:35px;
+background:rgba(255,255,255,0.5);
+border-radius:28px;
+font-size:34px;
+font-style:italic;
+line-height:1.8;
+text-align:center;
+color:#9b7f6c;
+box-shadow:0 5px 15px rgba(0,0,0,0.03);
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:90px;
+padding:60px 20px;
+text-align:center;
+background:#efe7dc;
+color:#9b8778;
+font-size:18px;
+line-height:2;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+.navbar{
+padding:18px 20px;
+flex-direction:column;
+gap:15px;
+}
+
+.hero{
+padding:60px 25px;
+gap:45px;
+}
+
+.hero-text h1{
+font-size:46px;
+text-align:center;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:2;
+}
+
+.quote-box{
+font-size:28px;
+padding:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+🌿 Ruang Tenang
+</div>
+
+<div class="nav-links">
+<a href="index.html">Beranda</a>
+<a href="tulisan.html">Tulisan</a>
+<a href="catatan-hati.html">Catatan Hati</a>
+<a href="tentang-saya.html" class="active">Tentang Saya</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-image">
+
+<img src="tentang-saya-blur.png" alt="Tentang Saya">
+
+</div>
+
+<div class="hero-text">
+
+<h1>Tentang Saya 🌙</h1>
+
+<div class="subtitle">
+ruang kecil tentang seseorang yang sedang belajar hidup lebih pelan.
+</div>
+
+<p>
+Aku adalah seseorang yang sedang belajar memahami hidup pelan-pelan.
+</p>
+
+<p>
+Ada banyak hal dalam hidupku yang tidak selalu mudah dijelaskan. Banyak pertanyaan, banyak rasa, dan perjalanan yang diam-diam mengubah caraku memandang dunia.
+</p>
+
+<p>
+Aku tumbuh menjadi pribadi yang lebih peka—terhadap perasaan, terhadap luka, dan terhadap hal-hal kecil yang sering terlewatkan.
+</p>
+
+<p>
+Aku menyukai hal-hal sederhana:
+menulis saat hati terasa penuh,
+merawat tanaman kecil,
+berjalan tanpa tujuan,
+dan menemukan tenang dalam kesunyian.
+</p>
+
+<p>
+Bagiku, tenang bukan berarti hidup tanpa masalah.
+Tenang adalah saat kita mulai bisa menerima diri sendiri dengan lebih lembut.
+</p>
+
+<p>
+Ruang Tenang ini adalah tempat kecil tempatku bercerita.
+Tentang perjalanan memahami diri,
+belajar menerima,
+dan mencoba hidup dengan lebih jujur.
+</p>
+
+<p>
+Tidak selalu rapi.
+Tidak selalu kuat.
+Tapi nyata.
+</p>
+
+<div class="quote-box">
+“Dan mungkin, ini adalah waktuku untuk berjalan lebih pelan, tanpa harus terburu-buru menjadi siapa-siapa.”
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+pelan-pelan juga tetap sebuah langkah 🌿
+
+<br><br>
+
+© 2026 Ruang Tenang
+
+</footer>
+
+</body>
+</html>
