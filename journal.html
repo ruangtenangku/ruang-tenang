@@ -1,266 +1,213 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal • Ruang Tenang</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            margin: 0;
+            background: #f8f4ee;
+            color: #5f5147;
+            font-family: 'Lora', serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR STYLING */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,.02);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #5f5147;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #8b7c70;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #5f5147;
+            font-weight: 500;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: min(900px, 92%);
+            margin: auto;
+            padding: 50px 0 70px 0;
+            flex: 1;
+        }
+
+        .back {
+            display: inline-block;
+            text-decoration: none;
+            color: #a79589;
+            font-size: 14px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #5f5147;
+            transform: translateX(-3px);
+        }
+
+        /* HEADER */
+        .journal-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .journal-header .category {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: #9d8c80;
+            text-transform: uppercase;
+        }
+
+        .journal-header h1 {
+            font-size: 52px;
+            margin: 15px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: normal;
+        }
+
+        .journal-header p {
+            color: #8b7c70;
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ENTRY POST CARD */
+        .entry {
+            background: white;
+            border-radius: 22px;
+            padding: 40px;
+            margin-top: 35px;
+            box-shadow: 0 14px 35px rgba(0,0,0,.05);
+            transition: .35s;
+        }
+
+        .entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0,0,0,.08);
+        }
+
+        .entry-category {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b29c8d;
+        }
+
+        .entry-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: normal;
+            margin: 15px 0;
+            color: #5f5147;
+        }
+
+        .entry-text {
+            line-height: 2;
+            color: #6c5e54;
+            font-size: 16px;
+        }
+
+        .readmore {
+            display: inline-block;
+            margin-top: 22px;
+            text-decoration: none;
+            color: #8c735f;
+            font-style: italic;
+            transition: 0.3s;
+        }
+
+        .readmore:hover {
+            color: #5f5147;
+        }
+    </style>
 </head>
-
-<title>Journal • Ruang Tenang</title>
-
-<link rel="icon" type="image/png" href="favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-  <style>
-
-body{
-margin:0;
-background:#f8f4ee;
-font-family:'Lora',serif;
-color:#5f5147;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:70px 25px;
-}
-
-.back{
-text-decoration:none;
-color:#8f7f72;
-font-size:18px;
-}
-
-.back:hover{
-opacity:.7;
-}
-
-h1{
-font-family:'Cormorant Garamond',serif;
-font-size:68px;
-margin-top:50px;
-margin-bottom:10px;
-}
-
-.subtitle{
-font-size:20px;
-color:#8b7d72;
-margin-bottom:60px;
-line-height:1.8;
-}
-
-.entry{
-background:white;
-border-radius:20px;
-padding:35px;
-margin-bottom:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.05);
-transition:.35s;
-}
-
-.entry:hover{
-transform:translateY(-5px);
-}
-
-.date{
-font-size:14px;
-letter-spacing:2px;
-text-transform:uppercase;
-color:#b09c8e;
-margin-bottom:12px;
-}
-
-.title{
-font-size:34px;
-font-family:'Cormorant Garamond',serif;
-margin-bottom:15px;
-}
-
-.excerpt{
-font-size:20px;
-line-height:2;
-color:#6d6056;
-}
-
-.readmore{
-display:inline-block;
-margin-top:25px;
-text-decoration:none;
-color:#8a715f;
-font-style:italic;
-}
-
-.readmore:hover{
-letter-spacing:1px;
-}
-
-.quote{
-text-align:center;
-margin:80px auto 30px;
-font-style:italic;
-font-size:32px;
-font-family:'Cormorant Garamond',serif;
-color:#85776b;
-}
-
-</style>
-</head>
-
 <body>
 
-<!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🌿 Ruang Tenang</div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="tulisan.html">Tulisan</a>
+            <a href="journal.html">Journal</a>
+            <a href="tentang-saya.html" class="active">Tentang Saya</a>
+        </div>
+    </nav>
 
-<nav class="navbar">
+    <!-- MAIN CONTENT -->
+    <div class="container">
 
-<div class="logo">
-🌿 Ruang Tenang
-</div>
+        <a class="back" href="index.html">← kembali pelan-pelan</a>
 
-<div class="nav-links">
-<a href="index.html">Beranda</a>
-<a href="tulisan.html">Tulisan</a>
-<a href="journal.html" class="active">Journal</a>
-<a href="tentang-saya.html">Tentang Saya</a>
-</div>
+        <!-- Header Blog -->
+        <div class="journal-header">
+            <div class="category">📖 Journal</div>
+            <h1>Journal</h1>
+            <p>Tempat untuk menyimpan hari-hari yang tidak ingin kulupakan.</p>
+        </div>
 
-</nav>
+        <!-- Post 1: Tentang Benang Kusut -->
+        <div class="entry">
+            <div class="entry-category">📖 Tulisan Panjang</div>
+            <h2 class="entry-title">Tentang Benang Kusut</h2>
+            <div class="entry-text">
+                Hari ini aku kembali membuka bagian diriku yang selama ini sulit dijelaskan.
+                Ada sesuatu di dalam pikiranku yang terasa seperti bola benang kusut padat,
+                yang terus berputar tanpa henti...
+            </div>
+            <a class="readmore" href="tentang-benang-kusut.html">baca pelan-pelan →</a>
+        </div>
 
-<!-- ================= CONTENT ================= -->
+        <!-- Post 2: Halaman Kosong -->
+        <div class="entry">
+            <div class="entry-category">⏳ Segera Hadir</div>
+            <h2 class="entry-title">Halaman berikutnya masih kosong.</h2>
+            <div class="entry-text">
+                Mungkin nanti akan berisi cerita kecil, tentang hari yang terasa ringan,
+                atau tentang hujan yang akhirnya reda.
+            </div>
+        </div>
 
-<section class="journal-page">
+    </div>
 
-<div class="container">
-
-<a class="back-link" href="index.html">
-← kembali pelan-pelan
-</a>
-
-<div class="journal-header">
-
-<div class="journal-icon">
-🌿
-</div>
-
-<h1>Journal</h1>
-
-<p>
-Tempat untuk menyimpan hari-hari
-yang tidak ingin kulupakan.
-Kadang isinya hujan,
-kadang isinya matahari.
-</p>
-
-<div class="journal-month">
-✿ Februari 2026 ✿
-</div>
-
-</div>
-
-<!-- ================= ENTRY ================= -->
-
-<div class="journal-card">
-
-<div class="journal-date">
-6 Februari 2026
-</div>
-
-<h2>
-Tentang Benang Kusut
-</h2>
-
-<p>
-
-Hari ini aku kembali membuka bagian diriku
-yang selama ini sulit dijelaskan.
-
-Ada sesuatu di dalam pikiranku
-yang terasa seperti bola benang kusut padat,
-yang terus berputar tanpa henti.
-
-</p>
-
-<a href="tentang-benang-kusut.html" class="journal-button">
-baca pelan-pelan →
-</a>
-
-</div>
-
-<!-- ================= ENTRY ================= -->
-
-<div class="journal-card soon">
-
-<div class="journal-date">
-Segera hadir
-</div>
-
-<h2>
-Halaman berikutnya masih kosong.
-</h2>
-
-<p>
-
-Mungkin nanti akan berisi cerita kecil.
-
-Tentang hari yang terasa ringan.
-
-Atau tentang hujan
-yang akhirnya reda.
-
-</p>
-
-</div>
-
-<div class="journal-ending">
-
-"Semoga suatu hari nanti,
-aku membuka halaman-halaman ini
-bukan untuk mengingat luka,
-
-melainkan untuk melihat
-seberapa jauh aku sudah bertumbuh."
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-<p class="footer-quote">
-
-“pelan-pelan juga tetap sebuah langkah.”
-
-</p>
-
-<div class="footer-links">
-
-<a href="#">instagram</a>
-
-<a href="journal.html">journal</a>
-
-<a href="#">teman tumbuh</a>
-
-</div>
-
-<p class="copyright">
-
-© 2026 Ruang Tenang — dibuat dengan hati 🌿
-
-</p>
-
-</footer>
+    <!-- FOOTER BARU -->
+    <footer style="margin-top: 100px; padding: 60px 20px; text-align: center; border-top: 1px solid #e8ddd1; background: #faf7f3;">
+        <div style="font-size: 34px;">🌿</div>
+        <p style="font-family: Georgia, serif; font-size: 24px; font-style: italic; color: #7a6b60; line-height: 1.8; max-width: 700px; margin: 20px auto 0 auto;">
+            "Semoga suatu hari nanti, aku membuka halaman-halaman ini bukan untuk mengingat luka, tetapi untuk melihat seberapa jauh aku sudah bertumbuh."
+        </p>
+        <div style="margin-top: 35px; font-size: 14px; color: #9d8d81;">
+            © 2026 Ruang Tenang
+        </div>
+    </footer>
 
 </body>
-
 </html>
