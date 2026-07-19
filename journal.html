@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal • Ruang Tenang</title>
+    <title>Jurnal • Ruang Tenang</title>
     <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Google Fonts -->
@@ -20,34 +20,50 @@
             min-height: 100vh;
         }
 
-        /* NAVBAR STYLING */
-        .navbar {
+        /* HEADER & NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fcfaf6;
+            border-bottom: 1px solid #ece4d8;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 4%;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,.02);
+            padding: 22px 60px;
         }
 
         .logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
+            font-size: 42px;
+            color: #5f5147;
             font-weight: 600;
-            color: #5f5147;
         }
 
-        .nav-links a {
+        .logo a {
             text-decoration: none;
-            color: #8b7c70;
-            margin-left: 20px;
-            font-size: 15px;
-            transition: 0.3s;
+            color: inherit;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: #5f5147;
-            font-weight: 500;
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #7b6b60;
+            font-size: 18px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #4f433b;
+        }
+
+        nav a.active {
+            color: #4f433b;
+            font-weight: 600;
         }
 
         /* CONTAINER */
@@ -72,7 +88,7 @@
             transform: translateX(-3px);
         }
 
-        /* HEADER */
+        /* HEADER JOURNAL */
         .journal-header {
             text-align: center;
             margin-bottom: 60px;
@@ -151,16 +167,18 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">🌿 Ruang Tenang</div>
-        <div class="nav-links">
+    <!-- HEADER & NAVBAR -->
+    <header>
+        <div class="logo">
+            <a href="index.html">🌿 Ruang Tenang</a>
+        </div>
+        <nav>
             <a href="index.html">Beranda</a>
             <a href="tulisan.html">Tulisan</a>
-            <a href="journal.html">Journal</a>
-            <a href="tentang-saya.html" class="active">Tentang Saya</a>
-        </div>
-    </nav>
+            <a href="journal.html"class="active">Jurnal</a>
+            <a href="tentang-saya.html">Tentang Saya</a>
+        </nav>
+    </header>
 
     <!-- MAIN CONTENT -->
     <div class="container">
@@ -169,8 +187,8 @@
 
         <!-- Header Blog -->
         <div class="journal-header">
-            <div class="category">📖 Journal</div>
-            <h1>Journal</h1>
+            <div class="category">📖 Jurnal</div>
+            <h1>Jurnal</h1>
             <p>Tempat untuk menyimpan hari-hari yang tidak ingin kulupakan.</p>
         </div>
 
@@ -198,13 +216,12 @@
 
     </div>
 
-    <!-- FOOTER BARU -->
-    <footer style="margin-top: 100px; padding: 60px 20px; text-align: center; border-top: 1px solid #e8ddd1; background: #faf7f3;">
-        <div style="font-size: 34px;">🌿</div>
-        <p style="font-family: Georgia, serif; font-size: 24px; font-style: italic; color: #7a6b60; line-height: 1.8; max-width: 700px; margin: 20px auto 0 auto;">
-            "Semoga suatu hari nanti, aku membuka halaman-halaman ini bukan untuk mengingat luka, tetapi untuk melihat seberapa jauh aku sudah bertumbuh."
+    <!-- FOOTER SAMA SEPERTI HALAMAN LAIN -->
+    <footer style="margin-top: 100px; padding: 60px 20px; text-align: center; background: #f8f4ee;">
+        <p style="font-family: 'Lora', serif; font-size: 18px; color: #8c735f; margin: 0;">
+            pelan-pelan juga tetap sebuah langkah 🌿
         </p>
-        <div style="margin-top: 35px; font-size: 14px; color: #9d8d81;">
+        <div style="margin-top: 35px; font-size: 14px; color: #a79589;">
             © 2026 Ruang Tenang
         </div>
     </footer>
