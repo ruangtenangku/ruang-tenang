@@ -6,14 +6,255 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <title>Ruang Tenang</title>
 <style>
-/* === PENGATURAN DASAR === */
-body {
-    margin: 0;
-    /* padding-top dihapus karena navbar tidak lagi fixed di paling atas sejak awal */
-    scroll-behavior: smooth;
-    font-family: Georgia, serif;
-    background: #f6f1ea;
-    color: #5c4b43;
+body{
+    margin:0;
+    padding-top:90px;
+    scroll-behavior:smooth;
+    font-family:Georgia, serif;
+    background:#f6f1ea;
+    color:#5c4b43;
+}
+
+.hero{
+    height:100vh;
+    background:url('ruang-tenang.png');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    background:rgba(255,255,255,0.45);
+    padding:60px;
+    border-radius:30px;
+    backdrop-filter:blur(4px);
+}
+
+h1{
+    font-size:64px;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.button{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 24px;
+    background:#e7d6c7;
+    text-decoration:none;
+    color:#5f5147;
+    transition:0.3s;
+}
+.button:hover{
+    transform:translateY(-3px);
+    background:#dbc8b5;
+}
+
+.content-section{
+    background:#f6f1ea;
+    padding:80px 10%;
+    text-align:center;
+    color:#6e6256;
+}
+
+.content-section h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.intro{
+    font-size:18px;
+    margin-bottom:50px;
+    color:#8b7d71;
+}
+
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.card{
+    background:#fffaf5;
+    border-radius:25px;
+    overflow:hidden;
+    width:280px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.18);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#5c4b43;
+    margin-top:20px;
+    font-size:28px;
+}
+
+.card p{
+    padding:15px 25px 30px;
+    line-height:1.8;
+    font-size:16px;
+    color:#7b675b;
+}
+
+.quote-box{
+    margin-top:70px;
+    font-size:28px;
+    font-style:italic;
+    color:#8b7d71;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(248,243,235,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a{
+    position:relative;
+    padding-bottom:5px;
+    text-decoration:none;
+    color:#6b5b52;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#b89b84;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    background:#c9a98f;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.footer{
+    background:#efe7dc;
+    text-align:center;
+    padding:60px 20px;
+    margin-top:40px;
+    color:#7a6557;
+}
+
+.footer p{
+    margin:10px 0;
+}
+
+.footer-links{
+    margin:25px 0;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#8b7968;
+    transition:0.3s;
+    position:relative;
+}
+
+.footer-links a:hover{
+    color:#b89b84;
+}
+
+.footer-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0%;
+    height:1px;
+    background:#b89b84;
+    transition:0.3s;
+}
+
+.footer-links a:hover::after{
+    width:100%;
+}
+
+.copyright{
+    margin-top:30px;
+    font-size:14px;
+    opacity:0.8;
+}
+
+/* === ANIMASI UTAMA === */
+.fade-in {
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1s ease forwards;
+}
+
+.fade-delay-1{ animation-delay:0.2s; }
+.fade-delay-2{ animation-delay:0.4s; }
+.fade-delay-3{ animation-delay:0.6s; }
+
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(30px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(10px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes float{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0px); }
 }
 
 /* === LOADING SCREEN === */
@@ -23,385 +264,164 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #f6f1ea; /* Warna solid agar menutupi seluruh halaman */
-    z-index: 999999; /* Angka diperbesar agar pasti menutupi navbar */
-    
-    /* Tiga baris ini adalah kunci untuk membuat isinya persis di tengah */
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    
+    background: #f6f1ea;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: opacity 1s ease;
 }
 
 .loader-content {
     text-align: center;
     animation: fadeIn 2s ease;
-    /* Tambahan agar daun dan teks berbaris rapi ke bawah */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* === GAMBAR UTAMA (HERO) === */
-.hero {
-    height: 100vh;
-    background: url('ruang-tenang.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.leaf {
+    font-size: 42px;
+    animation: float 2s ease-in-out infinite;
 }
 
-.overlay {
-    background: rgba(255,255,255,0.45);
-    padding: 60px;
-    border-radius: 30px;
-    backdrop-filter: blur(4px);
-}
-
-h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 20px;
-    line-height: 1.8;
-}
-
-/* === MENU NAVIGASI (DIPINDAH KE TENGAH) === */
-.navbar {
-    width: 100%;
-    padding: 20px 60px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; /* Membuat menu menempel saat di-scroll melewati batasnya */
-    top: 0;
-    background: rgba(248,243,235,0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid #efe7dc;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #6b5b52;
-}
-
-.nav-links {
-    display: flex;
-    gap: 35px;
-}
-
-.nav-links a {
-    position: relative;
-    padding-bottom: 5px;
-    text-decoration: none;
-    color: #6b5b52;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #b89b84;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: #c9a98f;
-    transition: 0.3s;
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;
-}
-
-/* === TATA LETAK KONTEN (GRID KIRI-KANAN) === */
-.content-section {
-    background: #f6f1ea;
-    padding: 80px 5%;
-    color: #6e6256;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2.5fr 1fr; /* Pembagian layout */
-    gap: 50px;
-}
-
-.content-left {
-    text-align: left;
-}
-
-.content-left h2 {
-    font-size: 38px;
-    margin-bottom: 10px;
-    color: #5c4b43;
-}
-
-.intro {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #8b7d71;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-}
-
-.card {
-    background: #fffaf5;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08); /* Shadow diperhalus */
-    transition: 0.4s;
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card h3 {
-    color: #5c4b43;
-    margin: 20px 20px 10px;
-    font-size: 24px;
-}
-
-.card p {
-    padding: 0 20px 30px;
-    line-height: 1.6;
-    font-size: 16px;
-    color: #7b675b;
-}
-
-/* === SIDEBAR KANAN === */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.quote-box {
-    background: #fffaf5;
-    padding: 30px;
-    border-radius: 20px;
-    font-size: 22px;
-    font-style: italic;
-    color: #8b7d71;
-    line-height: 1.6;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-}
-
-/* === FOOTER === */
-.footer {
-    background: #efe7dc;
-    text-align: center;
-    padding: 60px 20px;
-    margin-top: 40px;
-    color: #7a6557;
-}
-
-.footer p { margin: 10px 0; }
-
-.footer-links {
-    margin: 25px 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #8b7968;
-    transition: 0.3s;
-    position: relative;
-}
-
-.footer-links a:hover { color: #b89b84; }
-
-.footer-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 1px;
-    background: #b89b84;
-    transition: 0.3s;
-}
-
-.footer-links a:hover::after { width: 100%; }
-
-.copyright {
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* === ANIMASI === */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease forwards;
-}
-
-.fade-delay-1 { animation-delay: 0.2s; }
-.fade-delay-2 { animation-delay: 0.4s; }
-.fade-delay-3 { animation-delay: 0.6s; }
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
-}
-
-/* === RESPONSIVE UTK HP === */
-@media (max-width: 900px) {
-    .content-section {
-        grid-template-columns: 1fr; /* Jadi satu kolom saat di HP */
-        padding: 60px 20px;
+/* === RESPONSIF HP === */
+@media (max-width:768px){
+    .navbar{
+        padding:15px 20px;
+        flex-direction:column;
+        gap:15px;
     }
-    .navbar {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
-    .hero { height: auto; padding: 100px 20px; }
-    h1 { font-size: 42px; }
-    .content-left h2 { font-size: 32px; }
+    .nav-links a{
+        font-size:15px;
+    }
+    .hero{
+        height:auto;
+        padding:80px 20px;
+    }
+    .overlay{
+        padding:35px 25px;
+    }
+    h1{
+        font-size:38px;
+    }
+    p{
+        font-size:16px;
+    }
+    .content-section h2{
+        font-size:30px;
+    }
+    .card{
+        width:100%;
+        max-width:340px;
+    }
+    .quote-box{
+        font-size:22px;
+    }
+    .footer{
+        padding:40px 20px;
+    }
 }
 </style>
 </head>
 <body>
 
-<!-- LOADING SCREEN -->
 <div id="loader">
-    <div class="loader-content">
-        <div class="leaf">🌿</div>
-        <p>masuk pelan-pelan...</p>
-    </div>
+   <div class="loader-content">
+      <div class="leaf">🌿</div>
+      <p>masuk pelan-pelan...</p>
+   </div>
 </div>
 
-<!-- 1. HERO SECTION DI ATAS -->
-<section class="hero">
-    <div class="overlay">
-        <h1>🌿 Ruang Tenang</h1>
-        <p>Tempat pulang untuk hati yang lelah,<br>dan ruang kecil untuk belajar bertumbuh pelan-pelan.</p>
-    </div>
-</section>
-
-<!-- 2. NAVBAR DIPINDAH KE BAWAH HERO (STICKY) -->
 <nav class="navbar">
-    <div class="logo">🌿 Ruang Tenang</div>
-    <div class="nav-links">
-        <a href="index.html" class="active">Beranda</a>
-        <a href="tulisan.html">Tulisan</a>
-        <a href="catatan-hati.html">Catatan Hati</a>
-        <a href="teman-tumbuh.html">Teman Tumbuh</a>
-        <a href="tentang-saya.html">Tentang Saya</a>
-    </div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Beranda</a>
+    <a href="tulisan.html">Tulisan</a>
+    <a href="catatan-hati.html">Catatan Hati</a>
+    <a href="teman-tumbuh.html">Teman Tumbuh</a>
+    <a href="tentang-saya.html">Tentang Saya</a>
+  </div>
 </nav>
 
-<!-- 3. KONTEN (DIBAGI KIRI DAN KANAN) -->
-<section id="content" class="content-section">
-    
-    <!-- BAGIAN KIRI: DAFTAR KARTU -->
-    <div class="content-left">
-        <h2>Terima kasih sudah hadir di sini 🌿</h2>
-        <p class="intro">Ruang kecil untuk hati yang sedang belajar bernapas lebih pelan.</p>
-
-        <div class="card-container">
-            <div class="card fade-in fade-delay-1">
-                <a href="belajar-jujur.html" class="card-link">
-                    <img src="Serene-Morning.png" alt="Belajar Jujur"/>
-                    <h3>Belajar Jujur</h3>
-                    <p>Tentang lelah yang selama ini tidak pernah benar-benar diucapkan.</p>
-                </a>
-            </div>
-
-            <div class="card fade-in fade-delay-2">
-                <a href="hari-yang-berat.html" class="card-link">
-                    <img src="Pelan-pelan-melalui-jalan-taman.png" alt="Hari yang Berat"/>
-                    <h3>Hari yang Berat</h3>
-                    <p>Tidak semua hari harus dilalui dengan kuat.</p>
-                </a>
-            </div>
-
-            <div class="card fade-in fade-delay-3">
-                <a href="tentang-rumah.html" class="card-link">
-                    <img src="Cozy-garden-retreat-in-golden-light.png" alt="Tentang Rumah"/>
-                    <h3>Tentang Rumah</h3>
-                    <p>Kadang rumah adalah rasa aman yang belum pernah kita punya.</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- BAGIAN KANAN: SIDEBAR / QUOTE -->
-    <aside class="sidebar fade-in fade-delay-3">
-        <div class="quote-box">
-            “Kita semua sedang bertumbuh dengan cara yang berbeda.”
-        </div>
-    </aside>
-
+<section class="hero">
+<div class="overlay">
+<h1>🌿 Ruang Tenang</h1>
+<p>
+Tempat pulang untuk hati yang lelah,<br>
+dan ruang kecil untuk belajar bertumbuh pelan-pelan.
+</p>
+<a href="#content" class="button">
+  masuk pelan-pelan →
+</a>
+</div>
 </section>
 
-<!-- 4. FOOTER -->
-<footer class="footer">
-    <p>“pelan-pelan juga tetap sebuah langkah.”</p>
-    <div class="footer-links">
-        <a href="#">instagram</a>
-        <a href="#">catatan</a>
+<section id="content" class="content-section">
+  <h2>Terima kasih sudah hadir di sini 🌿</h2>
+  <p class="intro">
+    Ruang kecil untuk hati yang sedang belajar bernapas lebih pelan.
+  </p>
+
+  <div class="card-container">
+    <!-- Kartu 1 -->
+    <div class="card fade-in fade-delay-1">
+      <a href="belajar-jujur.html" class="card-link">
+        <img src="Serene-Morning.png" alt="Belajar Jujur" />
+        <h3>Belajar Jujur</h3>
+        <p>Tentang lelah yang selama ini tidak pernah benar-benar diucapkan.</p>
+      </a>
     </div>
-    <p class="copyright">© 2026 Ruang Tenang — dibuat dengan hati 🌿</p>
+
+    <!-- Kartu 2 -->
+    <div class="card fade-in fade-delay-2">
+      <a href="hari-yang-berat.html" class="card-link">
+        <img src="Pelan-pelan-melalui-jalan-taman.png" alt="Hari yang Berat" />
+        <h3>Hari yang Berat</h3>
+        <p>Tidak semua hari harus dilalui dengan kuat.</p>
+      </a>
+    </div>
+
+    <!-- Kartu 3 -->
+    <div class="card fade-in fade-delay-3">
+      <a href="tentang-rumah.html" class="card-link">
+        <img src="Cozy-garden-retreat-in-golden-light.png" alt="Tentang Rumah" />
+        <h3>Tentang Rumah</h3>
+        <p>Kadang rumah adalah rasa aman yang belum pernah kita punya.</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    “Kita semua sedang bertumbuh dengan cara yang berbeda.”
+  </div>
+</section>
+
+<footer class="footer">
+<p>
+“pelan-pelan juga tetap sebuah langkah.”
+</p>
+<div class="footer-links">
+<a href="#">instagram</a>
+<a href="#">catatan</a>
+</div>
+<p class="copyright">
+© 2026 Ruang Tenang — dibuat dengan hati 🌿
+</p>
 </footer>
 
 <script>
 window.addEventListener("load", function(){
+  setTimeout(function(){
+    document.getElementById("loader").style.opacity = "0";
     setTimeout(function(){
-        document.getElementById("loader").style.opacity = "0";
-        setTimeout(function(){
-            document.getElementById("loader").style.display = "none";
-        }, 1000);
-    }, 1800);
+      document.getElementById("loader").style.display = "none";
+    },1000);
+  },1800);
 });
 </script>
 </body>
