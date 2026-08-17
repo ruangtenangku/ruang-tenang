@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Teman Tumbuh — Ruang Tenang</title>
+<style>
+body {
+    margin: 0;
+    padding-top: 90px;
+    scroll-behavior: smooth;
+    font-family: Georgia, serif;
+    background: #f6f1ea;
+    color: #5c4b43;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === NAVBAR === */
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(248,243,235,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #6b5b52;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #b89b84;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #c9a98f;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* === KONTEN UTAMA === */
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #5c4b43;
+}
+
+.page-header p {
+    font-size: 17px;
+    color: #8b7d71;
+    line-height: 1.6;
+}
+
+/* KARTU DI TENGAH */
+.coming-soon-card {
+    background: #fffaf5;
+    padding: 45px 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icon-leaf {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.coming-soon-card p {
+    font-size: 16px;
+    color: #7b675b;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.coming-soon-card p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #8b7d71;
+}
+
+.badge-bottom {
+    display: block;
+    margin-top: 35px;
+    font-size: 14px;
+    color: #9c8b7d;
+    letter-spacing: 0.5px;
+}
+
+/* === FOOTER === */
+.footer {
+    background: #efe7dc;
+    text-align: center;
+    padding: 40px 20px;
+    color: #7a6557;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* === RESPONSIVE HP === */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 15px;
+    }
+    .coming-soon-card {
+        padding: 35px 25px;
+    }
+    .page-header h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="tulisan.html">Tulisan</a>
+    <a href="catatan-hati.html">Catatan Hati</a>
+    <a href="teman-tumbuh.html" class="active">Teman Tumbuh</a>
+    <a href="tentang-saya.html">Tentang Saya</a>
+  </div>
+</nav>
+
+<!-- KONTEN UTAMA -->
+<div class="container">
+    
+    <div class="page-header">
+        <h1>Teman Tumbuh 🌱</h1>
+        <p>Tempat di mana kita belajar bahwa bertumbuh tidak harus sendirian.</p>
+    </div>
+
+    <div class="coming-soon-card">
+        <span class="icon-leaf">🌿</span>
+        <p>
+            Ruang ini sedang dipersiapkan.<br>
+            Mungkin suatu hari nanti, tempat ini akan menjadi ruang kecil untuk berbagi cerita, meninggalkan pesan, dan saling mengingatkan bahwa kita tidak harus melewati semuanya sendirian.
+        </p>
+        <p>
+            Pelan-pelan, kita akan sampai.
+        </p>
+        <span class="badge-bottom">segera hadir · dibuat dengan hati 🌱</span>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>“pelan-pelan juga tetap sebuah langkah.”</p>
+    <p class="copyright">© 2026 Ruang Tenang</p>
+</footer>
+
+</body>
+</html>
