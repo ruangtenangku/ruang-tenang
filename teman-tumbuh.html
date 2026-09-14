@@ -351,43 +351,46 @@ body {
     setupOptions('.feeling-btn');
     setupOptions('.hope-btn');
 
-    function kirimPesan() {
-        const feeling = document.querySelector('.feeling-btn.active');
-        const hope = document.querySelector('.hope-btn.active');
+   function kirimPesan() {
+    const feeling = document.querySelector('.feeling-btn.active');
+    const hope = document.querySelector('.hope-btn.active');
 
-        if (feeling && hope) {
-            const formArea = document.getElementById('interaction-form');
-            const successMsg = document.getElementById('success-message');
-            const dynamicReply = document.getElementById('dynamic-reply');
-            const hopeText = hope.innerText;
+    if (feeling && hope) {
+        const formArea = document.getElementById('interaction-form');
+        const successMsg = document.getElementById('success-message');
+        const dynamicReply = document.getElementById('dynamic-reply');
+        
+        // Membaca teks lebih aman dan mengubahnya menjadi huruf kecil semua
+        const hopeText = (hope.textContent || hope.innerText).toLowerCase();
 
-            // Logika untuk mengubah teks balasan sesuai pilihan harapan
-            if (hopeText.includes("Peluk jauh")) {
-                dynamicReply.innerText = "Pelukan hangatmu sudah ditinggalkan di teras ini.";
-            } else if (hopeText.includes("Semoga besok lebih ringan")) {
-                dynamicReply.innerText = "Harapanmu untuk hari esok yang lebih baik sudah tersimpan.";
-            } else if (hopeText.includes("Kita belajar sama-sama")) {
-                dynamicReply.innerText = "Semangatmu untuk bertumbuh bersama sudah diletakkan di sini.";
-            } else {
-                dynamicReply.innerText = "Jejakmu sudah tersimpan di teras ini.";
-            }
+        // Pencocokan teks yang lebih kebal terhadap spasi atau emoji
+        if (hopeText.includes("peluk jauh")) {
+            dynamicReply.innerText = "Pelukan hangatmu sudah ditinggalkan di teras ini.";
+        } else if (hopeText.includes("besok lebih ringan")) {
+            dynamicReply.innerText = "Harapanmu untuk hari esok yang lebih baik sudah tersimpan.";
+        } else if (hopeText.includes("belajar sama-sama")) {
+            dynamicReply.innerText = "Semangatmu untuk bertumbuh bersama sudah diletakkan di sini.";
+        } else {
+            dynamicReply.innerText = "Jejakmu sudah tersimpan di teras ini.";
+        }
 
-            // Mulai transisi memudar (fade-out)
-            formArea.classList.add('fade-out');
+        // Mulai transisi memudar (fade-out)
+        formArea.classList.add('fade-out');
+
+        setTimeout(() => {
+            formArea.style.display = 'none';
+            successMsg.style.display = 'block';
 
             setTimeout(() => {
-                formArea.style.display = 'none';
-                successMsg.style.display = 'block';
+                successMsg.classList.add('fade-in');
+            }, 50);
+        }, 800);
 
-                setTimeout(() => {
-                    successMsg.classList.add('fade-in');
-                }, 50);
-            }, 800);
-
-        } else {
-            alert("Pilih satu perasaan dan satu harapan dulu ya sebelum meninggalkan jejak 🤍");
-        }
+    } else {
+        alert("Pilih satu perasaan dan satu harapan dulu ya sebelum meninggalkan jejak 🤍");
     }
+}
+
 </script>
 
 </body>
