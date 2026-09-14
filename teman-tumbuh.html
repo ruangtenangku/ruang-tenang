@@ -312,12 +312,12 @@ body {
             <span class="badge-bottom">Pesanmu akan disimpan tanpa nama.</span>
         </div>
 
-        <!-- Pesan Sukses yang muncul setelah diklik -->
-        <div id="success-message">
-            <span style="font-size: 32px; display: block; margin-bottom: 20px;">🤍</span>
-            <p style="font-size: 19px; color: #5c4b43; margin-bottom: 8px;">Jejakmu sudah tersimpan di teras ini.</p>
-            <p style="font-size: 16px; color: #8b7d71; font-style: italic; margin-top: 0;">Terima kasih sudah bertahan hari ini.</p>
-        </div>
+<!-- Pesan Sukses yang muncul setelah diklik -->
+<div id="success-message">
+    <span style="font-size: 32px; display: block; margin-bottom: 20px;">🤍</span>
+    <p id="dynamic-reply" style="font-size: 19px; color: #5c4b43; margin-bottom: 8px;">Jejakmu sudah tersimpan di teras ini.</p>
+    <p style="font-size: 16px; color: #8b7d71; font-style: italic; margin-top: 0;">Terima kasih sudah bertahan hari ini.</p>
+</div>        
 
         <hr class="divider">
 
@@ -358,20 +358,31 @@ body {
         if (feeling && hope) {
             const formArea = document.getElementById('interaction-form');
             const successMsg = document.getElementById('success-message');
+            const dynamicReply = document.getElementById('dynamic-reply');
+            const hopeText = hope.innerText;
 
-            // 1. Mulai transisi memudar (fade-out)
+            // Logika untuk mengubah teks balasan sesuai pilihan harapan
+            if (hopeText.includes("Peluk jauh")) {
+                dynamicReply.innerText = "Pelukan hangatmu sudah ditinggalkan di teras ini.";
+            } else if (hopeText.includes("Semoga besok lebih ringan")) {
+                dynamicReply.innerText = "Harapanmu untuk hari esok yang lebih baik sudah tersimpan.";
+            } else if (hopeText.includes("Kita belajar sama-sama")) {
+                dynamicReply.innerText = "Semangatmu untuk bertumbuh bersama sudah diletakkan di sini.";
+            } else {
+                dynamicReply.innerText = "Jejakmu sudah tersimpan di teras ini.";
+            }
+
+            // Mulai transisi memudar (fade-out)
             formArea.classList.add('fade-out');
 
-            // 2. Tunggu sebentar sesuai durasi CSS, lalu hilangkan wadah form
             setTimeout(() => {
                 formArea.style.display = 'none';
                 successMsg.style.display = 'block';
 
-                // 3. Beri jeda sangat kecil sebelum memunculkan pesan (fade-in)
                 setTimeout(() => {
                     successMsg.classList.add('fade-in');
                 }, 50);
-            }, 800); // 800 milidetik
+            }, 800);
 
         } else {
             alert("Pilih satu perasaan dan satu harapan dulu ya sebelum meninggalkan jejak 🤍");
