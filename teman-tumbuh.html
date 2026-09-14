@@ -108,6 +108,20 @@ body {
     box-sizing: border-box;
 }
 
+.intro-text p {
+    font-size: 16.5px;
+    color: #7b675b;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #eadecf;
+    margin: 35px auto;
+    width: 40%;
+}
+
 .interaction-card h2 {
     font-size: 22px;
     color: #5c4b43;
@@ -173,10 +187,19 @@ body {
 
 .badge-bottom {
     display: block;
-    margin-top: 35px;
+    margin-top: 15px;
     font-size: 14px;
     color: #9c8b7d;
     letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+.closing-quote p {
+    font-size: 16.5px;
+    color: #7b675b;
+    line-height: 1.9;
+    margin-top: 30px;
+    margin-bottom: 0;
 }
 
 /* === FOOTER === */
@@ -229,23 +252,32 @@ body {
 <div class="container">
     
     <div class="page-header">
-        <h1>Teman Tumbuh 🌱</h1>
+        <h1>🌱 Teman Tumbuh</h1>
         <p>Tempat di mana kita belajar bahwa bertumbuh tidak harus sendirian.</p>
     </div>
 
     <div class="interaction-card">
+        
+        <div class="intro-text">
+            <p>Tidak semua hari harus dilewati sendirian.<br>
+            Di sini, kamu boleh berhenti sebentar, mendengarkan isi hati,<br>
+            lalu meninggalkan sedikit kebaikan untuk seseorang yang mungkin membutuhkannya.</p>
+        </div>
+
+        <hr class="divider">
+
         <h2>Hari ini, apa yang sedang kamu rasakan?</h2>
-        <p class="subtitle">Pilih kalimat yang paling mewakili hatimu saat ini.</p>
+        <p class="subtitle">Tidak perlu menjelaskan. Pilih saja yang terasa paling dekat.</p>
         
         <div class="options-group feeling-group">
             <button class="option-btn feeling-btn">Hari ini cukup melelahkan, tapi aku bertahan.</button>
             <button class="option-btn feeling-btn">Aku sedang belajar memaafkan diriku sendiri.</button>
             <button class="option-btn feeling-btn">Ada kemajuan kecil, dan aku bangga.</button>
-            <button class="option-btn feeling-btn">Hanya ingin duduk diam dan bernapas.</button>
+            <button class="option-btn feeling-btn">Aku hanya ingin duduk diam dan bernapas.</button>
         </div>
 
-        <h2>Titipkan satu harapan untuk yang lain:</h2>
-        <p class="subtitle">Pesan ini akan disimpan di beranda ruang tenang ini.</p>
+        <h2>Titipkan satu harapan untuk yang lain 🌿</h2>
+        <p class="subtitle">Mungkin ada seseorang yang sedang membutuhkan kalimat kecil darimu.</p>
         
         <div class="options-group hope-group">
             <button class="option-btn hope-btn">Peluk jauh 🤍</button>
@@ -255,7 +287,15 @@ body {
 
         <button class="submit-btn" onclick="kirimPesan()">Tinggalkan Jejak</button>
         
-        <span class="badge-bottom">ruang aman · tanpa nama 🌱</span>
+        <span class="badge-bottom">Pesanmu akan disimpan tanpa nama.</span>
+
+        <hr class="divider">
+
+        <div class="closing-quote">
+            <p>Kamu tidak harus selalu tahu ke mana harus pergi.<br>
+            Kadang cukup tahu bahwa kamu tidak sendirian.</p>
+        </div>
+
     </div>
 
 </div>
@@ -268,31 +308,25 @@ body {
 
 <!-- JAVASCRIPT UNTUK INTERAKSI TOMBOL -->
 <script>
-    // Fungsi untuk membuat tombol bisa dipilih (satu per grup)
     function setupOptions(buttonClass) {
         const buttons = document.querySelectorAll(buttonClass);
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Hapus class 'active' dari semua tombol di grup yang sama
                 buttons.forEach(b => b.classList.remove('active'));
-                // Tambahkan class 'active' ke tombol yang diklik
                 btn.classList.add('active');
             });
         });
     }
 
-    // Jalankan fungsi untuk grup perasaan dan grup harapan
     setupOptions('.feeling-btn');
     setupOptions('.hope-btn');
 
-    // Fungsi saat tombol "Tinggalkan Jejak" diklik
     function kirimPesan() {
         const feeling = document.querySelector('.feeling-btn.active');
         const hope = document.querySelector('.hope-btn.active');
 
         if (feeling && hope) {
             alert("Terima kasih sudah meninggalkan jejak. Pesanmu sudah disimpan dengan aman di teras ini 🌿");
-            // Nanti di sini kita bisa tambahkan kode untuk mengirim data ke email/database
         } else {
             alert("Pilih satu perasaan dan satu harapan dulu ya sebelum meninggalkan jejak 🤍");
         }
