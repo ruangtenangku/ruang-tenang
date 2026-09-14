@@ -71,7 +71,7 @@ body {
 
 /* === KONTEN UTAMA === */
 .container {
-    max-width: 650px;
+    max-width: 700px;
     margin: auto;
     padding: 60px 20px;
     text-align: center;
@@ -98,8 +98,8 @@ body {
     line-height: 1.6;
 }
 
-/* KARTU DI TENGAH */
-.coming-soon-card {
+/* === KARTU INTERAKSI === */
+.interaction-card {
     background: #fffaf5;
     padding: 45px 40px;
     border-radius: 25px;
@@ -108,23 +108,67 @@ body {
     box-sizing: border-box;
 }
 
-.icon-leaf {
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: block;
+.interaction-card h2 {
+    font-size: 22px;
+    color: #5c4b43;
+    margin-bottom: 5px;
+    font-weight: normal;
 }
 
-.coming-soon-card p {
-    font-size: 16px;
-    color: #7b675b;
-    line-height: 1.9;
-    margin-bottom: 20px;
-}
-
-.coming-soon-card p:last-child {
-    margin-bottom: 0;
-    font-style: italic;
+.interaction-card p.subtitle {
+    font-size: 15px;
     color: #8b7d71;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.options-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Tombol Pilihan */
+.option-btn {
+    background-color: transparent;
+    border: 1px solid #c9a98f;
+    color: #7b675b;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: #efe7dc;
+    color: #5c4b43;
+}
+
+.option-btn.active {
+    background-color: #b89b84;
+    color: #fffaf5;
+    border-color: #b89b84;
+}
+
+/* Tombol Kirim */
+.submit-btn {
+    background-color: #5c4b43;
+    color: #fffaf5;
+    border: none;
+    padding: 12px 35px;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #7b675b;
 }
 
 .badge-bottom {
@@ -159,7 +203,7 @@ body {
     .nav-links a {
         font-size: 15px;
     }
-    .coming-soon-card {
+    .interaction-card {
         padding: 35px 25px;
     }
     .page-header h1 {
@@ -189,16 +233,29 @@ body {
         <p>Tempat di mana kita belajar bahwa bertumbuh tidak harus sendirian.</p>
     </div>
 
-    <div class="coming-soon-card">
-        <span class="icon-leaf">🌿</span>
-        <p>
-            Ruang ini sedang dipersiapkan.<br>
-            Mungkin suatu hari nanti, tempat ini akan menjadi ruang kecil untuk berbagi cerita, meninggalkan pesan, dan saling mengingatkan bahwa kita tidak harus melewati semuanya sendirian.
-        </p>
-        <p>
-            Pelan-pelan, kita akan sampai.
-        </p>
-        <span class="badge-bottom">segera hadir · dibuat dengan hati 🌱</span>
+    <div class="interaction-card">
+        <h2>Hari ini, apa yang sedang kamu rasakan?</h2>
+        <p class="subtitle">Pilih kalimat yang paling mewakili hatimu saat ini.</p>
+        
+        <div class="options-group feeling-group">
+            <button class="option-btn feeling-btn">Hari ini cukup melelahkan, tapi aku bertahan.</button>
+            <button class="option-btn feeling-btn">Aku sedang belajar memaafkan diriku sendiri.</button>
+            <button class="option-btn feeling-btn">Ada kemajuan kecil, dan aku bangga.</button>
+            <button class="option-btn feeling-btn">Hanya ingin duduk diam dan bernapas.</button>
+        </div>
+
+        <h2>Titipkan satu harapan untuk yang lain:</h2>
+        <p class="subtitle">Pesan ini akan disimpan di beranda ruang tenang ini.</p>
+        
+        <div class="options-group hope-group">
+            <button class="option-btn hope-btn">Peluk jauh 🤍</button>
+            <button class="option-btn hope-btn">Semoga besok lebih ringan 🌱</button>
+            <button class="option-btn hope-btn">Kita belajar sama-sama 🌿</button>
+        </div>
+
+        <button class="submit-btn" onclick="kirimPesan()">Tinggalkan Jejak</button>
+        
+        <span class="badge-bottom">ruang aman · tanpa nama 🌱</span>
     </div>
 
 </div>
@@ -208,6 +265,39 @@ body {
     <p>“pelan-pelan juga tetap sebuah langkah.”</p>
     <p class="copyright">© 2026 Ruang Tenang</p>
 </footer>
+
+<!-- JAVASCRIPT UNTUK INTERAKSI TOMBOL -->
+<script>
+    // Fungsi untuk membuat tombol bisa dipilih (satu per grup)
+    function setupOptions(buttonClass) {
+        const buttons = document.querySelectorAll(buttonClass);
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Hapus class 'active' dari semua tombol di grup yang sama
+                buttons.forEach(b => b.classList.remove('active'));
+                // Tambahkan class 'active' ke tombol yang diklik
+                btn.classList.add('active');
+            });
+        });
+    }
+
+    // Jalankan fungsi untuk grup perasaan dan grup harapan
+    setupOptions('.feeling-btn');
+    setupOptions('.hope-btn');
+
+    // Fungsi saat tombol "Tinggalkan Jejak" diklik
+    function kirimPesan() {
+        const feeling = document.querySelector('.feeling-btn.active');
+        const hope = document.querySelector('.hope-btn.active');
+
+        if (feeling && hope) {
+            alert("Terima kasih sudah meninggalkan jejak. Pesanmu sudah disimpan dengan aman di teras ini 🌿");
+            // Nanti di sini kita bisa tambahkan kode untuk mengirim data ke email/database
+        } else {
+            alert("Pilih satu perasaan dan satu harapan dulu ya sebelum meninggalkan jejak 🤍");
+        }
+    }
+</script>
 
 </body>
 </html>
