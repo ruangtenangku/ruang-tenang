@@ -122,6 +122,27 @@ body {
     width: 40%;
 }
 
+/* === WADAH FORM DAN TRANSISI === */
+#interaction-form {
+    transition: opacity 0.8s ease;
+}
+
+#interaction-form.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#success-message {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    padding: 40px 0;
+}
+
+#success-message.fade-in {
+    opacity: 1;
+}
+
 .interaction-card h2 {
     font-size: 22px;
     color: #5c4b43;
@@ -266,28 +287,37 @@ body {
 
         <hr class="divider">
 
-        <h2>Hari ini, apa yang sedang kamu rasakan?</h2>
-        <p class="subtitle">Tidak perlu menjelaskan. Pilih saja yang terasa paling dekat.</p>
-        
-        <div class="options-group feeling-group">
-            <button class="option-btn feeling-btn">Hari ini cukup melelahkan, tapi aku bertahan.</button>
-            <button class="option-btn feeling-btn">Aku sedang belajar memaafkan diriku sendiri.</button>
-            <button class="option-btn feeling-btn">Ada kemajuan kecil, dan aku bangga.</button>
-            <button class="option-btn feeling-btn">Aku hanya ingin duduk diam dan bernapas.</button>
+        <!-- Area Form yang bisa hilang -->
+        <div id="interaction-form">
+            <h2>Hari ini, apa yang sedang kamu rasakan?</h2>
+            <p class="subtitle">Tidak perlu menjelaskan. Pilih saja yang terasa paling dekat.</p>
+            
+            <div class="options-group feeling-group">
+                <button class="option-btn feeling-btn">Hari ini cukup melelahkan, tapi aku bertahan.</button>
+                <button class="option-btn feeling-btn">Aku sedang belajar memaafkan diriku sendiri.</button>
+                <button class="option-btn feeling-btn">Ada kemajuan kecil, dan aku bangga.</button>
+                <button class="option-btn feeling-btn">Aku hanya ingin duduk diam dan bernapas.</button>
+            </div>
+
+            <h2>Titipkan satu harapan untuk yang lain 🌿</h2>
+            <p class="subtitle">Mungkin ada seseorang yang sedang membutuhkan kalimat kecil darimu.</p>
+            
+            <div class="options-group hope-group">
+                <button class="option-btn hope-btn">Peluk jauh 🤍</button>
+                <button class="option-btn hope-btn">Semoga besok lebih ringan 🌱</button>
+                <button class="option-btn hope-btn">Kita belajar sama-sama 🌿</button>
+            </div>
+
+            <button class="submit-btn" onclick="kirimPesan()">Tinggalkan Jejak</button>
+            <span class="badge-bottom">Pesanmu akan disimpan tanpa nama.</span>
         </div>
 
-        <h2>Titipkan satu harapan untuk yang lain 🌿</h2>
-        <p class="subtitle">Mungkin ada seseorang yang sedang membutuhkan kalimat kecil darimu.</p>
-        
-        <div class="options-group hope-group">
-            <button class="option-btn hope-btn">Peluk jauh 🤍</button>
-            <button class="option-btn hope-btn">Semoga besok lebih ringan 🌱</button>
-            <button class="option-btn hope-btn">Kita belajar sama-sama 🌿</button>
+        <!-- Pesan Sukses yang muncul setelah diklik -->
+        <div id="success-message">
+            <span style="font-size: 32px; display: block; margin-bottom: 20px;">🤍</span>
+            <p style="font-size: 19px; color: #5c4b43; margin-bottom: 8px;">Jejakmu sudah tersimpan di teras ini.</p>
+            <p style="font-size: 16px; color: #8b7d71; font-style: italic; margin-top: 0;">Terima kasih sudah bertahan hari ini.</p>
         </div>
-
-        <button class="submit-btn" onclick="kirimPesan()">Tinggalkan Jejak</button>
-        
-        <span class="badge-bottom">Pesanmu akan disimpan tanpa nama.</span>
 
         <hr class="divider">
 
@@ -306,7 +336,7 @@ body {
     <p class="copyright">© 2026 Ruang Tenang</p>
 </footer>
 
-<!-- JAVASCRIPT UNTUK INTERAKSI TOMBOL -->
+<!-- JAVASCRIPT UNTUK INTERAKSI TOMBOL & ANIMASI -->
 <script>
     function setupOptions(buttonClass) {
         const buttons = document.querySelectorAll(buttonClass);
@@ -326,7 +356,23 @@ body {
         const hope = document.querySelector('.hope-btn.active');
 
         if (feeling && hope) {
-            alert("Terima kasih sudah meninggalkan jejak. Pesanmu sudah disimpan dengan aman di teras ini 🌿");
+            const formArea = document.getElementById('interaction-form');
+            const successMsg = document.getElementById('success-message');
+
+            // 1. Mulai transisi memudar (fade-out)
+            formArea.classList.add('fade-out');
+
+            // 2. Tunggu sebentar sesuai durasi CSS, lalu hilangkan wadah form
+            setTimeout(() => {
+                formArea.style.display = 'none';
+                successMsg.style.display = 'block';
+
+                // 3. Beri jeda sangat kecil sebelum memunculkan pesan (fade-in)
+                setTimeout(() => {
+                    successMsg.classList.add('fade-in');
+                }, 50);
+            }, 800); // 800 milidetik
+
         } else {
             alert("Pilih satu perasaan dan satu harapan dulu ya sebelum meninggalkan jejak 🤍");
         }
