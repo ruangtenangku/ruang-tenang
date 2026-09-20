@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Catatan — Ruang Tenang</title>
+<style>
+body {
+    margin: 0;
+    padding-top: 90px;
+    scroll-behavior: smooth;
+    font-family: Georgia, serif;
+    background: #f6f1ea;
+    color: #5c4b43;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+/* === NAVBAR === */
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(248,243,235,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #6b5b52;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b89b84;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #c9a98f;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* === KONTEN UTAMA === */
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-card {
+    background: #fffaf5;
+    padding: 50px 45px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.note-content p {
+    font-size: 17px;
+    color: #7b675b;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.note-content p:last-child {
+    margin-bottom: 0;
+}
+
+.signature {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #b89b84;
+}
+
+/* === FOOTER === */
+.footer {
+    background: #efe7dc;
+    text-align: center;
+    padding: 40px 20px;
+    color: #7a6557;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* === RESPONSIVE HP === */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 15px;
+    }
+    .note-card {
+        padding: 40px 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="tulisan.html">Tulisan</a>
+    <a href="catatan-hati.html">Catatan Hati</a>
+    <a href="teman-tumbuh.html">Teman Tumbuh</a>
+    <a href="tentang-saya.html">Tentang Saya</a>
+  </div>
+</nav>
+
+<!-- KONTEN UTAMA -->
+<div class="container">
+    <div class="note-card">
+        <div class="note-content">
+            <p>Ruang Tenang ini lahir dari hal-hal yang sedang kupelajari, rasakan, dan coba pahami.</p>
+            <p>Dalam proses pembuatannya, aku menggunakan bantuan AI untuk membantu menyusun tulisan, mengembangkan desain, dan menerjemahkan beberapa ide menjadi bentuk website.</p>
+            <p>Namun, cerita, arah, dan alasan mengapa ruang ini dibuat tetap berasal dari perjalanan yang sedang kulalui.</p>
+            <p>Website ini mungkin belum sempurna. Ada bagian yang masih belajar, ada yang masih sederhana, dan ada yang mungkin akan berubah seiring waktu.</p>
+            <p>Terima kasih sudah singgah.</p>
+            <div class="signature">🌿</div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>“pelan-pelan juga tetap sebuah langkah.”</p>
+    <p class="copyright">© 2026 Ruang Tenang</p>
+</footer>
+
+</body>
+</html>
