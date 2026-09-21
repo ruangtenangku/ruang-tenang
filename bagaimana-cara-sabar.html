@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Bagaimana Cara Bersabar Tanpa Batas? — Ruang Tenang</title>
+<style>
+body {
+    margin: 0;
+    padding-top: 90px;
+    scroll-behavior: smooth;
+    font-family: Georgia, serif;
+    background: #f6f1ea;
+    color: #5c4b43;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === NAVBAR === */
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(248,243,235,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #6b5b52;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #b89b84;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #c9a98f;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* === KONTEN UTAMA === */
+.container {
+    max-width: 680px;
+    margin: auto;
+    padding: 40px 20px 80px 20px;
+    flex: 1;
+}
+
+.article-content {
+    background: #fffaf5;
+    padding: 50px 55px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+}
+
+/* === ELEMEN BARU SESUAI FORMAT === */
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #9c8b7d;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #b89b84;
+}
+
+.article-title {
+    text-align: center;
+    font-size: 30px;
+    color: #5c4b43;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.title-divider {
+    border: none;
+    border-top: 1px solid #c9a98f;
+    width: 40px;
+    margin: 0 auto 40px auto;
+}
+
+.drop-cap {
+    float: left;
+    font-size: 48px;
+    line-height: 40px;
+    padding-top: 6px;
+    padding-right: 10px;
+    color: #c9a98f;
+}
+
+.article-content p {
+    font-size: 17px;
+    color: #7b675b;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.article-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* === FOOTER === */
+.footer {
+    background: #efe7dc;
+    text-align: center;
+    padding: 40px 20px;
+    color: #7a6557;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* === RESPONSIVE HP === */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 15px;
+    }
+    .article-content {
+        padding: 40px 30px;
+    }
+    .article-title {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="tulisan.html">Tulisan</a>
+    <a href="catatan-hati.html" class="active">Catatan Hati</a>
+    <a href="teman-tumbuh.html">Teman Tumbuh</a>
+    <a href="tentang-saya.html">Tentang Saya</a>
+  </div>
+</nav>
+
+<!-- KONTEN UTAMA -->
+<div class="container">
+    <div class="article-content">
+        <!-- Tautan Kembali -->
+        <a href="catatan-hati.html" class="back-link">&larr; kembali pelan-pelan</a>
+        
+        <!-- Judul & Garis Pembatas -->
+        <h1 class="article-title">“Bagaimana Cara Bersabar Tanpa Batas?”</h1>
+        <hr class="title-divider">
+
+        <!-- Konten dengan Drop Cap pada huruf 'A' -->
+        <p><span class="drop-cap">A</span>da masa ketika aku berpikir bahwa menjadi dewasa berarti harus semakin pandai memahami orang lain.<br>
+        Maka aku belajar diam ketika suasana tidak baik.<br>
+        Belajar menahan kata-kata.<br>
+        Belajar mengerti meskipun tidak selalu dimengerti.<br>
+        Belajar menerima bahwa ada hal-hal yang tidak bisa kuubah, sekalipun aku sudah berusaha menjelaskannya dengan sebaik mungkin.</p>
+
+        <p>Tapi sampai hari ini, aku masih belum tahu apakah aku sudah benar-benar pandai bersabar.<br>
+        Karena ada hari ketika aku bisa memahami.<br>
+        Ada hari ketika aku bisa memilih diam.<br>
+        Tetapi ada juga hari ketika aku lelah dan tidak tahu harus bersikap seperti apa.<br>
+        Haruskah aku bicara?<br>
+        Haruskah aku diam?<br>
+        Haruskah aku mendekat?<br>
+        Atau justru mengambil jarak?<br>
+        Aku masih sering bertanya-tanya.</p>
+
+        <p>Ada masa ketika aku bahkan belajar untuk berhati-hati saat tertawa.<br>
+        Berhati-hati saat berbicara.<br>
+        Berhati-hati ketika sedang menikmati sesuatu.<br>
+        Bukan karena aku melakukan kesalahan.<br>
+        Aku hanya terlalu terbiasa membaca suasana.<br>
+        Mendengarkan suara.<br>
+        Memperhatikan perubahan ekspresi.<br>
+        Mencoba mengetahui apakah hari itu aman untuk menjadi diriku sendiri.</p>
+
+        <p>Dan ternyata kebiasaan itu tidak selalu hilang hanya karena usia bertambah.<br>
+        Ada bagian dari diriku yang masih mudah terkejut oleh suara keras.<br>
+        Masih merasa tidak tenang ketika suasana berubah.<br>
+        Masih ingin memastikan semuanya baik-baik saja sebelum akhirnya mengizinkan diri sendiri untuk benar-benar beristirahat.</p>
+
+        <p>Kadang aku berpikir, mungkin inilah alasan mengapa aku begitu menghargai kesunyian.<br>
+        Karena dalam sunyi, aku tidak perlu membaca suasana.<br>
+        Aku tidak perlu menebak apakah seseorang sedang marah.<br>
+        Tidak perlu memikirkan apakah tawaku terlalu keras.<br>
+        Tidak perlu berhati-hati memilih kata.<br>
+        Tidak perlu merasa bahwa ketenangan bisa berubah kapan saja.<br>
+        Aku hanya bisa menjadi diriku sendiri.</p>
+
+        <p>Dan mungkin selama ini aku tidak sedang mencari rumah yang sempurna.<br>
+        Aku hanya ingin sebuah tempat di mana aku tidak perlu terus berjaga-jaga.<br>
+        Tempat di mana aku boleh makan dengan tenang.<br>
+        Boleh tidur dengan tenang.<br>
+        Boleh tertawa ketika sesuatu terasa lucu.<br>
+        Boleh merasa bahagia tanpa takut suasana tiba-tiba berubah.<br>
+        Aku ingin bisa pulang tanpa membawa rasa takut.</p>
+
+        <p>Namun aku tahu, aku belum sampai di sana.<br>
+        Aku masih belajar.<br>
+        Belajar membedakan mana yang menjadi tanggung jawabku dan mana yang bukan.<br>
+        Belajar memahami orang lain tanpa harus selalu mengorbankan diriku sendiri.<br>
+        Belajar bahwa mencintai seseorang tidak berarti aku harus mampu menerima semuanya.<br>
+        Belajar bahwa mengambil jarak sesekali tidak selalu berarti meninggalkan.<br>
+        Dan yang paling sulit, aku masih belajar menerima bahwa mungkin aku tidak akan pernah bisa membuat semua orang mengerti bagaimana perasaanku.</p>
+
+        <p>Aku tidak tahu apakah nanti aku akan selalu mampu bersabar.<br>
+        Aku tidak tahu apakah suatu hari aku akan kembali lelah.<br>
+        Mungkin akan ada hari ketika aku menangis lagi.<br>
+        Ada hari ketika aku marah.<br>
+        Ada hari ketika aku ingin pergi jauh dari semuanya.<br>
+        Dan mungkin itu tidak membuat semua usahaku menjadi sia-sia.<br>
+        Karena mungkin sabar bukan tentang tidak pernah lelah.<br>
+        Mungkin sabar adalah ketika setelah lelah, aku mencoba kembali menemukan cara untuk tidak menyakiti diriku sendiri maupun orang lain.</p>
+
+        <p>Aku belum tahu bagaimana akhirnya.<br>
+        Aku masih sering bingung.<br>
+        Masih belajar menerima hal-hal yang tidak bisa kuubah.<br>
+        Masih belajar melepaskan hal-hal yang bukan tanggung jawabku.<br>
+        Masih belajar menjadi lembut tanpa membiarkan diriku terus terluka.</p>
+
+        <p>Jadi untuk sekarang, aku tidak ingin mengatakan bahwa aku sudah kuat.<br>
+        Aku hanya ingin mengatakan:<br>
+        aku masih mencoba.<br>
+        Hari demi hari.<br>
+        Pelan-pelan.</p>
+
+        <p>Kalau suatu hari aku kembali tidak tahu harus bersikap bagaimana, semoga aku ingat untuk berhenti sebentar, menarik napas, dan bertanya kepada Allah:<br>
+        <em>“Ya Allah, kali ini aku harus bagaimana?”</em><br>
+        Mungkin aku tidak akan selalu punya jawabannya.<br>
+        Mungkin aku tidak akan selalu mampu bersabar.<br>
+        Tapi aku berharap, selama aku masih mau belajar, Allah tidak membiarkan hatiku kehilangan arah.<br>
+        Dan mungkin untuk hari ini, itu sudah cukup.</p>
+
+        <p>Aku masih belajar.<br>
+        Masih berjalan pelan.<br>
+        Masih belajar menjadi rumah untuk diriku sendiri.<br>
+        Dan masih percaya bahwa suatu hari nanti, aku akan tahu bagaimana rasanya hidup tanpa harus terus berjaga-jaga. 🌿</p>
+ <!-- Penutup Artikel di dalam kartu -->
+        <hr class="article-footer-divider">
+        <p class="article-footer-text">Ruang Tenang &bull; Catatan Hati</p>
+    </div>
+</div>
+
+</body>
+</html>
