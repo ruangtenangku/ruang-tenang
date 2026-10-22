@@ -340,7 +340,7 @@ p{
 
 <nav class="navbar">
   <div class="nav-links">
-    <a href="index.html" class="active">Beranda</a>
+    <a href="Home" class="active">Beranda</a>
     <a href="tulisan.html">Tulisan</a>
     <a href="catatan-hati.html">Catatan Hati</a>
     <a href="teman-tumbuh.html">Teman Tumbuh</a>
