@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Ruang Hening — Ruang Tenang</title>
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 90px;
+    font-family: Georgia, serif;
+    background: #f6f1ea;
+    color: #5c4b43;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === NAVBAR === */
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(248,243,235,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #6b5b52;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #b89b84;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #c9a98f;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* === CONTAINER UTAMA === */
+.container {
+    max-width: 820px;
+    margin: auto;
+    padding: 30px 20px 80px 20px;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* === KOTAK KONSEP UTAMA (SESUAI GAMBAR) === */
+.hening-overview {
+    background: #fffaf5;
+    border: 1px solid #e6ddd3;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+    margin-bottom: 60px;
+}
+
+.hening-banner {
+    background: #e9ece2; /* Muted sage green lembut */
+    border-radius: 16px;
+    padding: 40px 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hening-banner h1 {
+    margin: 0 0 12px 0;
+    font-size: 32px;
+    color: #5c6b54;
+    font-weight: normal;
+}
+
+.hening-banner p {
+    margin: 0;
+    font-size: 17px;
+    color: #6d7368;
+    font-style: italic;
+}
+
+.hening-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.grid-card {
+    display: block;
+    text-decoration: none;
+    padding: 26px 28px;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(92, 75, 67, 0.06);
+}
+
+/* Variasi warna selang-seling seperti referensi */
+.card-warm {
+    background: #f3ece4;
+}
+
+.card-sage {
+    background: #e9ece2;
+}
+
+.card-num {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-warm .card-num {
+    color: #9e816b;
+}
+
+.card-sage .card-num {
+    color: #77876f;
+}
+
+.grid-card h2 {
+    margin: 0 0 8px 0;
+    font-size: 19px;
+    color: #4a3f38;
+    font-weight: bold;
+}
+
+.grid-card p {
+    margin: 0;
+    font-size: 14.5px;
+    color: #7b6e65;
+    line-height: 1.5;
+}
+
+.overview-caption {
+    text-align: center;
+    margin: 24px 0 4px 0;
+    font-size: 14px;
+    color: #8c7d72;
+}
+
+/* === EMPAT BAGIAN KONTEN DALAM SATU HALAMAN === */
+.hening-section {
+    background: #fffaf5;
+    border-radius: 20px;
+    padding: 45px 50px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+    scroll-margin-top: 110px; /* Supaya pas diklik tidak ketutup navbar */
+}
+
+.section-tag {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #b89b84;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.hening-section h3 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: #5c4b43;
+    font-weight: normal;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #ece3d8;
+    width: 50px;
+    margin: 0 0 25px 0;
+}
+
+.hening-section p {
+    font-size: 16.5px;
+    color: #7b675b;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.hening-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Quote / Kalimat Penenang Box */
+.calm-quote {
+    background: #f6f1ea;
+    border-left: 3px solid #c9a98f;
+    padding: 20px 25px;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #5c4b43;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* Kotak Latihan Napas (Jeda Sejenak) */
+.breath-box {
+    background: #e9ece2;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.breath-circle {
+    width: 90px;
+    height: 90px;
+    background: #fffaf5;
+    border-radius: 50%;
+    margin: 0 auto 18px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5c6b54;
+    font-size: 14px;
+    box-shadow: 0 0 0 8px rgba(119, 135, 111, 0.15);
+    animation: breathe 8s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(0.95); }
+    50% { transform: scale(1.12); }
+}
+
+.breath-guide {
+    font-size: 15px;
+    color: #5c6b54 !important;
+    margin: 0 !important;
+}
+
+/* === FOOTER === */
+.footer {
+    background: #efe7dc;
+    text-align: center;
+    padding: 40px 20px;
+    color: #7a6557;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* === RESPONSIVE HP === */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 15px;
+    }
+    .hening-overview {
+        padding: 18px;
+    }
+    .hening-grid {
+        grid-template-columns: 1fr;
+    }
+    .hening-section {
+        padding: 35px 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="tulisan.html">Tulisan</a>
+    <a href="catatan-hati.html">Catatan Hati</a>
+    <a href="teman-tumbuh.html">Teman Tumbuh</a>
+    <a href="ruang-hening.html" class="active">Ruang Hening</a>
+    <a href="tentang-saya.html">Tentang Saya</a>
+  </div>
+</nav>
+
+<!-- KONTEN UTAMA -->
+<div class="container">
+
+    <!-- KOTAK KONSEP 4 BAGIAN (SESUAI GAMBAR) -->
+    <div class="hening-overview">
+        <div class="hening-banner">
+            <h1>Ruang Hening</h1>
+            <p>Tempat untuk berhenti sejenak, sebelum kembali melangkah.</p>
+        </div>
+
+        <div class="hening-grid">
+            <a href="#bagian-01" class="grid-card card-warm">
+                <span class="card-num">01</span>
+                <h2>Kalimat Penenang</h2>
+                <p>Untuk hati yang membutuhkan penguatan.</p>
+            </a>
+
+            <a href="#bagian-02" class="grid-card card-sage">
+                <span class="card-num">02</span>
+                <h2>Jeda Sejenak</h2>
+                <p>Latihan sederhana untuk bernapas dan beristirahat.</p>
+            </a>
+
+            <a href="#bagian-03" class="grid-card card-sage">
+                <span class="card-num">03</span>
+                <h2>Pengingat Kecil</h2>
+                <p>Hal-hal sederhana yang perlu kita ingat.</p>
+            </a>
+
+            <a href="#bagian-04" class="grid-card card-warm">
+                <span class="card-num">04</span>
+                <h2>Doa dan Harapan</h2>
+                <p>Doa dan harapan untuk menemani perjalanan.</p>
+            </a>
+        </div>
+
+        <p class="overview-caption">Empat bagian dalam satu halaman, bukan empat halaman berbeda.</p>
+    </div>
+
+    <!-- BAGIAN 01 -->
+    <section id="bagian-01" class="hening-section">
+        <span class="section-tag">01 • Kalimat Penenang</span>
+        <h3>Untuk hati yang membutuhkan penguatan.</h3>
+        <hr class="section-divider">
+        <p>Tidak semua hal harus selesai hari ini. Tidak semua pertanyaan harus langsung terjawab detik ini juga.</p>
+        <div class="calm-quote">
+            “Kamu tidak tertinggal. Kamu hanya sedang berjalan dengan ritme yang paling aman untuk hatimu sendiri.”
+        </div>
+        <p>Kalau hari ini terasa berat, izinkan dirimu menurunkan bahu, meletakkan sejenak beban yang bukan tanggung jawabmu, dan beristirahat tanpa rasa bersalah.</p>
+    </section>
+
+    <!-- BAGIAN 02 -->
+    <section id="bagian-02" class="hening-section">
+        <span class="section-tag">02 • Jeda Sejenak</span>
+        <h3>Latihan sederhana untuk bernapas dan beristirahat.</h3>
+        <hr class="section-divider">
+        <p>Lepaskan pandangan dari layar sejenak, sandarkan punggungmu, lalu ikuti gerakan lingkaran di bawah ini pelan-pelan:</p>
+        
+        <div class="breath-box">
+            <div class="breath-circle">hening</div>
+            <p class="breath-guide">Tarik napas pelan saat lingkaran membesar... lalu hembuskan perlahan saat mengecil.</p>
+        </div>
+    </section>
+
+    <!-- BAGIAN 03 -->
+    <section id="bagian-03" class="hening-section">
+        <span class="section-tag">03 • Pengingat Kecil</span>
+        <h3>Hal-hal sederhana yang perlu kita ingat.</h3>
+        <hr class="section-divider">
+        <p>• Minum segelas air putih hangat hari ini.</p>
+        <p>• Kamu berhak menjaga jarak dari hal-hal yang membuatmu terus berjaga-jaga.</p>
+        <p>• Pelan-pelan juga tetap terhitung sebagai sebuah langkah.</p>
+        <p>• Tidak apa-apa jika hari ini kamu hanya sanggup bertahan dan bernapas.</p>
+    </section>
+
+    <!-- BAGIAN 04 -->
+    <section id="bagian-04" class="hening-section">
+        <span class="section-tag">04 • Doa dan Harapan</span>
+        <h3>Doa dan harapan untuk menemani perjalanan.</h3>
+        <hr class="section-divider">
+        <p>Semoga Allah selalu menjaga hatimu agar tidak kehilangan arah, melembutkan hari-hari yang terasa kaku, dan menghadirkan ketenangan di tempat mana pun kamu berpijak.</p>
+        <p>Semoga kelak kamu sampai di titik di mana pulang terasa benar-benar aman dan menenangkan. 🌿</p>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>“pelan-pelan juga tetap sebuah langkah.”</p>
+    <p class="copyright">© 2026 Ruang Tenang</p>
+</footer>
+
+</body>
+</html>
